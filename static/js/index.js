@@ -14,7 +14,9 @@
 $(document).ready(function() {
     var map = initMap('map');
 
-    ajax('tracks.json', function(response, statusCode) {
+    urlQuery = parseQuery();
+
+    ajax(urlQuery.track || 'tracks.json', function(response, statusCode) {
         if (statusCode !== 200)
             return $('#error').text('could not get track data: ' + statusCode);
 
@@ -22,6 +24,19 @@ $(document).ready(function() {
         for (var i = 0; i < data.length; i++) addGeoJson(map, data[i]);
     });
 });
+
+function parseQuery() {
+    if (window.location.search.indexOf('?') === -1)
+        return {};
+    var query = window.location.search.split('&');
+    var result = {};
+    query.forEach(function(elem, i, arr) {
+        if (i == 0) elem = elem.slice(1);
+        var props = elem.split('=');
+        result[props[0]] = props[1];
+    });
+    return result;
+}
 
 function ajax(url, success, method, mimetype) {
     var oReq = new XMLHttpRequest();
@@ -34,7 +49,7 @@ function ajax(url, success, method, mimetype) {
 
 function initMap(domID) {
     var map = L.map('map', { maxZoom: 17 }).setView([51.96, 7.63], 13);
-    var layerCtrl = L.control.groupedLayers({}, {}).addTo(map);
+    var layerCtrl = L.control.layers({}, {}).addTo(map);
     L.control.scale().addTo(map);
     L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' + ' contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
@@ -67,8 +82,7 @@ function addGeoJson(map, data) {
     var featureGroup = L.featureGroup().addTo(map.map);
     track.addTo(featureGroup);
     pois.addTo(featureGroup);
-    map.layerCtrl.addOverlay(featureGroup, data.meta.tags[1], data.meta.tags[0]);
-    featureGroup.properties = data.meta;
+    map.layerCtrl.addOverlay(featureGroup, data.meta.tags.toString());
 
     map.map.fitBounds(featureGroup.getBounds(), { padding: [60, 60]});
 

@@ -101,7 +101,7 @@ function processGeoJSON(geojson, tags, done) {
       date: data.features[0].properties.date,
       events: {}
     },
-    events: turf.featureCollection(eventPoints),
+    events: {},
     track: turf.featureCollection(lines)
   };
 
@@ -152,6 +152,7 @@ function processGeoJSON(geojson, tags, done) {
     }
   };
 
+  // init eventcounters
   for (var type in events) result.meta.events[type + 's'] = 0;
 
   // add a point to result, if at least one event occured on the current line
