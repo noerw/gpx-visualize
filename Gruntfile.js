@@ -1,14 +1,15 @@
-var fs = require('fs'),
-  csv = require('csv'),
-  async = require('async');
+var gpx2geojson = require('idris-gpx'),
+  async = require('async'),
+  turf = require('turf'),
+  turfMeta = require('turf-meta');
 
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    parseCSV: {
-      src: 'data/**/*.csv',
+    parseGPX: {
+      src: 'data/Rush-Hour_Nebenstrecke.gpx',
       dest: 'tracks.json',
-      pretty: false
+      pretty: true
     },
     ftp_push: {
       nroo: {
@@ -41,12 +42,12 @@ module.exports = function(grunt) {
     },
     watch: {
       sources: {
-        files: ['<%= parseCSV.src %>'],
-        tasks: ['parseCSV'],
+        files: ['<%= parseGPX.src %>'],
+        tasks: ['parseGPX'],
         options: { livereload: true }
       },
       static: {
-        files: ['static/**',  'index.html', '<%= parseCSV.dest %>'],
+        files: ['static/**',  'index.html', '<%= parseGPX.dest %>'],
         options: { livereload: true }
       }
     }
@@ -56,135 +57,124 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('parseCSV', function() {
-    grunt.config.requires('parseCSV.src');
-    grunt.config.requires('parseCSV.dest');
+  grunt.registerTask('parseGPX', function() {
+    grunt.config.requires('parseGPX.src');
+    grunt.config.requires('parseGPX.dest');
 
     var done = this.async();
-    var paths = grunt.file.expand({ filter: 'isFile' }, grunt.config('parseCSV.src'));
+    var paths = grunt.file.expand({ filter: 'isFile' }, grunt.config('parseGPX.src'));
 
-    async.map(paths, function(path, done) {
-      var group = path.split('/');
-      csv2geojson(grunt.file.read(path), {
-        group: group[group.length-2],
-        name: path.split('/').pop().split('.')[0]
-      }, done);
+    async.map(paths, function(path, callback) {
+      var basename = path.split('/').pop().split('.');
+
+      if (basename[basename.length-1] !== 'gpx') return callback('unknown file format');
+
+      gpx2geojson.points(path, function(json) {
+        processGeoJSON(json, basename[0].split('_'), callback);
+      });
     },
     function allParsed(err, result) {
       if (err) return done(err);
-
-      grunt.file.write(grunt.config('parseCSV.dest'),
-        JSON.stringify(result, null, grunt.config('parseCSV.pretty') ? 2 : 0));
+      grunt.file.write(grunt.config('parseGPX.dest'),
+        JSON.stringify(result, null, grunt.config('parseGPX.pretty') ? 2 : 0));
       done();
     });
   });
 
-  grunt.registerTask('publish', ['parseCSV', 'ftp_push']);
-  grunt.registerTask('default', ['parseCSV', 'connect', 'watch']);
+  grunt.registerTask('publish', ['parseGPX', 'ftp_push']);
+  grunt.registerTask('default', ['parseGPX', 'connect', 'watch']);
 };
 
 //////////////////////////////////////////////////////////////////////
 
-// parses easylogger csv files to geojson
-function csv2geojson(csvData, properties, callback) {
-  var csvParseOpts = { columns: true, auto_parse: true };
-  csv.parse(csvData, csvParseOpts, function(err, data) {
-    if (err) return callback(err);
-
-    var geojson = {
-      'Track': {
-        type: 'FeatureCollection',
-        features: [],
-        properties: {}
-      },
-      'POIs': {
-        type: 'FeatureCollection',
-        features: [],
-        properties: {}
-      }
-    };
-
-    geojson['Track'].properties = properties;
-    geojson['Track'].properties.date = data[0]['Date Created'];
-    //geojson['Track'].properties.duration =
-    //geojson['Track'].properties.maxSpeed =
-    //geojson['Track'].properties.heightDelta =
-    geojson['Track'].properties.length = data[data.length - 1]['Distance from Start'];
-    geojson['Track'].properties['number of stops'] = 0;
-    geojson['Track'].properties['number of turns'] = 0;
-    geojson['Track'].properties['number of turns with stop'] = 0;
-
-    // required to parse the track / linestring
-    var prevCoords = [data[0]['Longitude'], data[0]['Latitude'], data[0]['Elevation']];
-
-    for (var i = 1; i < data.length; i++) {
-      var coords = [data[i]['Longitude'], data[i]['Latitude'], data[i]['Elevation']];
-
-      // detect stops etc
-      var stopFlag = isStop(data[i]);
-      var turnFlag = isTurn(data[i], data[i-1]);
-
-      var point = {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: coords
-        },
-        properties: {
-          type: '',
-          speed: data[i]['Speed'],
-          distance: data[i]['Distance from Last']
-        }
-      };
-
-      if (stopFlag && turnFlag) {
-        geojson['Track'].properties['number of turns with stop']++;
-        point.properties.type = 'stop & turn';
-        geojson['POIs'].features.push(point);
-      } else if (!stopFlag && turnFlag) {
-        geojson['Track'].properties['number of turns']++;
-        point.properties.type = 'turn';
-        geojson['POIs'].features.push(point);
-      } else if (stopFlag) {
-        geojson['Track'].properties['number of stops']++;
-        point.properties.type = 'stop';
-        geojson['POIs'].features.push(point);
-      } else {
-        geojson['POIs'].features.push(point);
-      }
-
-      // lines
-      geojson['Track'].features.push({
-        type: 'Feature',
-        geometry: {
-          type: 'LineString',
-          coordinates: [coords, prevCoords]
-        },
-        properties: {
-          speed: data[i]['Speed'],
-          bearing: data[i]['Bearing']
-        }
-      });
-
-      prevCoords = coords;
-    }
-
-    geojson['Track'].properties['number of turns'] += geojson['Track'].properties['number of turns with stop'];
-
-    callback(null, geojson);
+function processGeoJSON(geojson, tags, done) {
+  // create a clone of the data & convert strings to numbers where possible
+  var data = JSON.parse(JSON.stringify(geojson), function(key, val) {
+    return !isNaN(parseFloat(val)) && isFinite(val) ? parseFloat(val) : val;
   });
 
-  function isStop(point, prevPoint) {
-    var speedThresh = 9.5;  // km/h
-    return point['Speed'] <= speedThresh;
+  var prevPoint = null, prevLine = null, lines = [], eventPoints = [], result = {
+    meta: {
+      tags: tags || [],
+      length: 0,   // kilometers
+      duration: 0, // hours
+      date: data.features[0].properties.date,
+      events: {}
+    },
+    events: turf.featureCollection(eventPoints),
+    track: turf.featureCollection(lines)
   };
 
-  function isTurn(point, prevPoint) {
-    var bearingThresh = 80; // degree
-    var distanceThresh = 0.005; // km
-    if (point['Distance from Last'] > distanceThresh
-        && Math.abs(point['Bearing'] - prevPoint['Bearing']) >= bearingThresh)
-      return true;
-    return false;
+  turfMeta.featureEach(data, function(point) {
+    // create a line from the waypoints
+    if (prevPoint !== null) {
+      var linestring = turf.lineString([
+        prevPoint.geometry.coordinates, point.geometry.coordinates
+      ]);
+      var duration = new Date(point.properties.time) - new Date(prevPoint.properties.time);
+      duration /= 1000 * 60 * 60; // convert millisec to hours
+      linestring.properties.length = turf.distance(prevPoint, point, 'kilometers');
+      linestring.properties.speed = linestring.properties.length / duration;
+      linestring.properties.bearing = turf.bearing(prevPoint, point);
+      linestring.properties.elevation = point.properties.ele - prevPoint.properties.ele;
+
+      // update global metadata
+      result.meta.duration += duration;
+      result.meta.length += linestring.properties.length;
+      lines.push(linestring);
+    }
+
+    prevPoint = point;
+  });
+
+  // detect events
+  var events = {
+    'stop': {
+      fn: function isStop(line, prevLine) {
+        var speedThresh = 10;  // km/h
+        return (line.properties.speed <= speedThresh);
+      },
+      coordIndex: 1
+    },
+    'turn': {
+      fn: function isTurn(line, prevLine) {
+        var bearingThresh = 66; // degrees
+        var distanceThresh = 0.005; // km
+        var angle = line.properties.bearing - prevLine.properties.bearing;
+        if (angle > 180)       angle -= 360;
+        else if (angle < -180) angle += 360;
+
+        if (prevLine.properties.length > distanceThresh && Math.abs(angle) >= bearingThresh)
+          return true;
+        return false;
+      },
+      coordIndex: 0
+    }
   };
+
+  for (var type in events) result.meta.events[type + 's'] = 0;
+
+  // add a point to result, if at least one event occured on the current line
+  turfMeta.featureEach(result.track, function(line) {
+    if (prevLine !== null) {
+      var point = turf.point(line.geometry.coordinates[1], { events: [] });
+
+      for (var type in events) {
+        if (events[type].fn(line, prevLine)) {
+          if (events[type].coordIndex === 1) point.properties.events.push(type);
+          else prevPoint.properties.events.push(type);
+          result.meta.events[type + 's']++;
+        }
+      }
+      eventPoints.push(point);
+    }
+    prevLine = line;
+    prevPoint = point;
+  });
+
+  result.events = eventPoints.filter(function(val, i, arr) {
+    return (val.properties.events.length > 0) ? true : false;
+  })
+
+  done(null, result);
 }

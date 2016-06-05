@@ -10,10 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.0-rc.5",
-    "csv": "^1.1.0",
     "grunt": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-ftp-push": "^1.0.0"
+    "grunt-ftp-push": "^1.0.0",
+    "idris-gpx": "^0.1.1",
+    "turf": "^3.0.5",
+    "turf-meta": "^3.0.1"
   }
 }
