@@ -21,7 +21,7 @@ $(document).ready(function() {
             return $('#error').text('could not get track data: ' + statusCode);
 
         var data = JSON.parse(response);
-        for (var i = 0; i < data.length; i++) addGeoJson(map, data[i]);
+        addGeoJson(map, data[0]);
     });
 });
 
@@ -48,7 +48,7 @@ function ajax(url, success, method, mimetype) {
 }
 
 function initMap(domID) {
-    var map = L.map('map', { maxZoom: 17 }).setView([51.96, 7.63], 13);
+    var map = L.map(domID, { maxZoom: 17 }).setView([51.96, 7.63], 13);
     var layerCtrl = L.control.layers({}, {}).addTo(map);
     L.control.scale().addTo(map);
     L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {

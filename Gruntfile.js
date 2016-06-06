@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     parseGPX: {
-      src: 'data/Rush-Hour_Nebenstrecke.gpx',
+      src: 'data/*.gpx',
       dest: 'tracks.json',
       pretty: true
     },
@@ -98,7 +98,7 @@ function processGeoJSON(geojson, tags, done) {
       tags: tags || [],
       length: 0,   // kilometers
       duration: 0, // hours
-      date: data.features[0].properties.date,
+      date: data.features[0].properties.time,
       events: {}
     },
     events: {},
@@ -113,19 +113,23 @@ function processGeoJSON(geojson, tags, done) {
       ]);
       var duration = new Date(point.properties.time) - new Date(prevPoint.properties.time);
       duration /= 1000 * 60 * 60; // convert millisec to hours
-      linestring.properties.length = turf.distance(prevPoint, point, 'kilometers');
-      linestring.properties.speed = linestring.properties.length / duration;
-      linestring.properties.bearing = turf.bearing(prevPoint, point);
-      linestring.properties.elevation = point.properties.ele - prevPoint.properties.ele;
+      linestring.properties.length = roundFloat(turf.distance(prevPoint, point, 'kilometers'), 4);
+      linestring.properties.speed = roundFloat(linestring.properties.length / duration);
+      linestring.properties.bearing = roundFloat(turf.bearing(prevPoint, point), 1);
+      linestring.properties.elevation = roundFloat(point.properties.ele - prevPoint.properties.ele);
+      lines.push(linestring);
 
       // update global metadata
       result.meta.duration += duration;
       result.meta.length += linestring.properties.length;
-      lines.push(linestring);
     }
 
     prevPoint = point;
   });
+
+
+  result.meta.length = roundFloat(result.meta.length);
+  result.meta.duration = roundFloat(result.meta.duration);
 
   // detect events
   var events = {
@@ -178,4 +182,9 @@ function processGeoJSON(geojson, tags, done) {
   })
 
   done(null, result);
+}
+
+function roundFloat(val, decimals) {
+  var digits = decimals === undefined ? 1e3 : Number('1e' + decimals);
+  return Math.round(val * digits) / digits;
 }

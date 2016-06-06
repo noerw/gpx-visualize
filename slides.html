@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="static/vendor/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="static/vendor/leaflet.awesome-markers/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="static/css/slides.css">
+</head>
+
+<body>
+  <div class="left">
+    <div id="map0"></div>
+    <table id="map0-meta">
+      <tr titles><th></th></tr>
+      <tr date><th>date:</th></tr>
+      <tr length><th>length:</th></tr>
+      <tr duration><th>duration:</th></tr>
+      <tr stops><th>stops:</th></tr>
+      <tr turns><th>turns:</th></tr>
+    </table>
+  </div>
+
+  <div class="right">
+    <div id="map1"></div>
+    <table id="map1-meta">
+      <tr titles><th></th></tr>
+      <tr date><th>date:</th></tr>
+      <tr length><th>length:</th></tr>
+      <tr duration><th>duration:</th></tr>
+      <tr stops><th>stops:</th></tr>
+      <tr turns><th>turns:</th></tr>
+    </table>
+  </div>
+
+  <p id="error" style="z-index: 1; position: absolute; top: 10%; left: 10%; font-size: 200%;"></p>
+
+  <script src="static/vendor/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="static/vendor/leaflet/dist/leaflet-src.js" charset="utf-8"></script>
+  <script src="static/vendor/L.Map.Sync.js" charset="utf-8"></script>
+  <script src="static/vendor/leaflet.awesome-markers/leaflet.awesome-markers.min.js" charset="utf-8"></script>
+  <script src="static/js/slides.js" charset="utf-8"></script>
+</body>
+</html>

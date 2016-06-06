@@ -1,0 +1,37 @@
+html, body, .left, .right{
+    margin: 0;
+    height: 100%;
+    font-family: sans;
+    background-color: #ddd;
+}
+.left { float: left; width: 49.5%; height: 100%; }
+.right { float: right; width: 49.5%; height: 100%; }
+
+h2 {
+  margin: 15px;
+  text-align: center;
+}
+
+table tr:first-child * {
+    padding-bottom: 8px;
+}
+
+tr>th {
+  text-align: right;
+  padding-right: 5px;
+}
+
+th, td {
+    padding-left: 12px;
+}
+#map0, #map1 { height: 70%; }
+
+.leaflet-popup-content-wrapper {
+    border-radius: 4px;
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+    padding-right: 7px;
+    margin: 3px;
+}
+
