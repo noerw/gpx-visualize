@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+ version = "1.1"
+creator = "EasyLOGGER - http://www.navilock.com"
+xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+xmlns = "http://www.topografix.com/GPX/1/1"
+xsi:schemaLocation = "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.topografix.com/GPX/gpx_overlay/0/3 http://www.topografix.com/GPX/gpx_overlay/0/3/gpx_overlay.xsd http://www.topografix.com/GPX/gpx_modified/0/1 http://www.topografix.com/GPX/gpx_modified/0/1/gpx_modified.xsd">
+<metadata>
+<bounds maxlat="51.969094" maxlon="7.641871" minlat="51.952538" minlon="7.595665"/>
+</metadata>
+<trk>
+<name>Track 058</name>
+ <desc>Track#58</desc>
+<trkseg>
+<trkpt lat="51.968816" lon="7.595943">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:15Z</time>
+ <desc>Lat.=51.968816, Long.=7.595943, Alt.=70.000000m.</desc>
+</trkpt>
+<trkpt lat="51.968816" lon="7.595943">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:23Z</time>
+ <desc>Lat.=51.968816, Long.=7.595943, Alt.=70.000000m, Speed=0Km/h, Course=0deg.</desc>
+</trkpt>
+<trkpt lat="51.968778" lon="7.596308">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:32Z</time>
+ <desc>Lat.=51.968778, Long.=7.596308, Alt.=70.000000m, Speed=10Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.968531" lon="7.596358">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:38Z</time>
+ <desc>Lat.=51.968531, Long.=7.596358, Alt.=70.000000m, Speed=16Km/h, Course=173deg.</desc>
+</trkpt>
+<trkpt lat="51.968291" lon="7.596355">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:43Z</time>
+ <desc>Lat.=51.968291, Long.=7.596355, Alt.=70.000000m, Speed=19Km/h, Course=180deg.</desc>
+</trkpt>
+<trkpt lat="51.968042" lon="7.596318">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:17:48Z</time>
+ <desc>Lat.=51.968042, Long.=7.596318, Alt.=70.000000m, Speed=20Km/h, Course=185deg.</desc>
+</trkpt>
+<trkpt lat="51.967792" lon="7.596318">
+ <ele>71.000000</ele>
+ <time>2016-06-20T20:17:53Z</time>
+ <desc>Lat.=51.967792, Long.=7.596318, Alt.=71.000000m, Speed=19Km/h, Course=180deg.</desc>
+</trkpt>
+<trkpt lat="51.967558" lon="7.596266">
+ <ele>72.000000</ele>
+ <time>2016-06-20T20:17:58Z</time>
+ <desc>Lat.=51.967558, Long.=7.596266, Alt.=72.000000m, Speed=18Km/h, Course=188deg.</desc>
+</trkpt>
+<trkpt lat="51.967350" lon="7.596412">
+ <ele>71.000000</ele>
+ <time>2016-06-20T20:18:03Z</time>
+ <desc>Lat.=51.967350, Long.=7.596412, Alt.=71.000000m, Speed=18Km/h, Course=157deg.</desc>
+</trkpt>
+<trkpt lat="51.967139" lon="7.596534">
+ <ele>71.000000</ele>
+ <time>2016-06-20T20:18:08Z</time>
+ <desc>Lat.=51.967139, Long.=7.596534, Alt.=71.000000m, Speed=17Km/h, Course=160deg.</desc>
+</trkpt>
+<trkpt lat="51.966941" lon="7.596733">
+ <ele>71.000000</ele>
+ <time>2016-06-20T20:18:13Z</time>
+ <desc>Lat.=51.966941, Long.=7.596733, Alt.=71.000000m, Speed=18Km/h, Course=148deg.</desc>
+</trkpt>
+<trkpt lat="51.966771" lon="7.596970">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:18:17Z</time>
+ <desc>Lat.=51.966771, Long.=7.596970, Alt.=70.000000m, Speed=22Km/h, Course=139deg.</desc>
+</trkpt>
+<trkpt lat="51.966582" lon="7.597306">
+ <ele>70.000000</ele>
+ <time>2016-06-20T20:18:22Z</time>
+ <desc>Lat.=51.966582, Long.=7.597306, Alt.=70.000000m, Speed=22Km/h, Course=132deg.</desc>
+</trkpt>
+<trkpt lat="51.966426" lon="7.597630">
+ <ele>69.000000</ele>
+ <time>2016-06-20T20:18:26Z</time>
+ <desc>Lat.=51.966426, Long.=7.597630, Alt.=69.000000m, Speed=25Km/h, Course=128deg.</desc>
+</trkpt>
+<trkpt lat="51.966234" lon="7.597932">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:18:31Z</time>
+ <desc>Lat.=51.966234, Long.=7.597932, Alt.=68.000000m, Speed=21Km/h, Course=136deg.</desc>
+</trkpt>
+<trkpt lat="51.966026" lon="7.598063">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:18:35Z</time>
+ <desc>Lat.=51.966026, Long.=7.598063, Alt.=68.000000m, Speed=22Km/h, Course=159deg.</desc>
+</trkpt>
+<trkpt lat="51.965776" lon="7.598108">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:18:39Z</time>
+ <desc>Lat.=51.965776, Long.=7.598108, Alt.=68.000000m, Speed=25Km/h, Course=174deg.</desc>
+</trkpt>
+<trkpt lat="51.965514" lon="7.598203">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:18:44Z</time>
+ <desc>Lat.=51.965514, Long.=7.598203, Alt.=68.000000m, Speed=21Km/h, Course=167deg.</desc>
+</trkpt>
+<trkpt lat="51.965290" lon="7.598298">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:18:48Z</time>
+ <desc>Lat.=51.965290, Long.=7.598298, Alt.=68.000000m, Speed=23Km/h, Course=165deg.</desc>
+</trkpt>
+<trkpt lat="51.965050" lon="7.598455">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:18:53Z</time>
+ <desc>Lat.=51.965050, Long.=7.598455, Alt.=66.000000m, Speed=20Km/h, Course=158deg.</desc>
+</trkpt>
+<trkpt lat="51.964826" lon="7.598560">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:18:59Z</time>
+ <desc>Lat.=51.964826, Long.=7.598560, Alt.=66.000000m, Speed=15Km/h, Course=164deg.</desc>
+</trkpt>
+<trkpt lat="51.964803" lon="7.598646">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:14Z</time>
+ <desc>Lat.=51.964803, Long.=7.598646, Alt.=65.000000m, Speed=1Km/h, Course=113deg.</desc>
+</trkpt>
+<trkpt lat="51.964787" lon="7.599034">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:20Z</time>
+ <desc>Lat.=51.964787, Long.=7.599034, Alt.=65.000000m, Speed=15Km/h, Course=94deg.</desc>
+</trkpt>
+<trkpt lat="51.964787" lon="7.599392">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:24Z</time>
+ <desc>Lat.=51.964787, Long.=7.599392, Alt.=65.000000m, Speed=22Km/h, Course=90deg.</desc>
+</trkpt>
+<trkpt lat="51.964790" lon="7.599758">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:28Z</time>
+ <desc>Lat.=51.964790, Long.=7.599758, Alt.=65.000000m, Speed=22Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.964794" lon="7.600157">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:32Z</time>
+ <desc>Lat.=51.964794, Long.=7.600157, Alt.=65.000000m, Speed=24Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.964838" lon="7.600574">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:36Z</time>
+ <desc>Lat.=51.964838, Long.=7.600574, Alt.=65.000000m, Speed=26Km/h, Course=80deg.</desc>
+</trkpt>
+<trkpt lat="51.964896" lon="7.600968">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:19:41Z</time>
+ <desc>Lat.=51.964896, Long.=7.600968, Alt.=65.000000m, Speed=19Km/h, Course=77deg.</desc>
+</trkpt>
+<trkpt lat="51.964925" lon="7.601252">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:19:56Z</time>
+ <desc>Lat.=51.964925, Long.=7.601252, Alt.=64.000000m, Speed=4Km/h, Course=81deg.</desc>
+</trkpt>
+<trkpt lat="51.964992" lon="7.601628">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:20:04Z</time>
+ <desc>Lat.=51.964992, Long.=7.601628, Alt.=63.000000m, Speed=12Km/h, Course=74deg.</desc>
+</trkpt>
+<trkpt lat="51.964838" lon="7.601942">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:20:12Z</time>
+ <desc>Lat.=51.964838, Long.=7.601942, Alt.=63.000000m, Speed=12Km/h, Course=128deg.</desc>
+</trkpt>
+<trkpt lat="51.964666" lon="7.602230">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:20:18Z</time>
+ <desc>Lat.=51.964666, Long.=7.602230, Alt.=61.000000m, Speed=16Km/h, Course=134deg.</desc>
+</trkpt>
+<trkpt lat="51.964669" lon="7.602625">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:20:22Z</time>
+ <desc>Lat.=51.964669, Long.=7.602625, Alt.=61.000000m, Speed=24Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.964678" lon="7.603022">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:26Z</time>
+ <desc>Lat.=51.964678, Long.=7.603022, Alt.=60.000000m, Speed=24Km/h, Course=88deg.</desc>
+</trkpt>
+<trkpt lat="51.964675" lon="7.603412">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:20:30Z</time>
+ <desc>Lat.=51.964675, Long.=7.603412, Alt.=59.000000m, Speed=24Km/h, Course=91deg.</desc>
+</trkpt>
+<trkpt lat="51.964656" lon="7.603798">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:34Z</time>
+ <desc>Lat.=51.964656, Long.=7.603798, Alt.=60.000000m, Speed=23Km/h, Course=95deg.</desc>
+</trkpt>
+<trkpt lat="51.964432" lon="7.603998">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:40Z</time>
+ <desc>Lat.=51.964432, Long.=7.603998, Alt.=60.000000m, Speed=17Km/h, Course=151deg.</desc>
+</trkpt>
+<trkpt lat="51.964179" lon="7.603968">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:44Z</time>
+ <desc>Lat.=51.964179, Long.=7.603968, Alt.=60.000000m, Speed=25Km/h, Course=184deg.</desc>
+</trkpt>
+<trkpt lat="51.963933" lon="7.603938">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:48Z</time>
+ <desc>Lat.=51.963933, Long.=7.603938, Alt.=60.000000m, Speed=24Km/h, Course=184deg.</desc>
+</trkpt>
+<trkpt lat="51.963712" lon="7.603889">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:52Z</time>
+ <desc>Lat.=51.963712, Long.=7.603889, Alt.=60.000000m, Speed=22Km/h, Course=188deg.</desc>
+</trkpt>
+<trkpt lat="51.963488" lon="7.604105">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:20:57Z</time>
+ <desc>Lat.=51.963488, Long.=7.604105, Alt.=60.000000m, Speed=20Km/h, Course=149deg.</desc>
+</trkpt>
+<trkpt lat="51.963290" lon="7.604331">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:21:02Z</time>
+ <desc>Lat.=51.963290, Long.=7.604331, Alt.=62.000000m, Speed=19Km/h, Course=145deg.</desc>
+</trkpt>
+<trkpt lat="51.963085" lon="7.604485">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:21:06Z</time>
+ <desc>Lat.=51.963085, Long.=7.604485, Alt.=62.000000m, Speed=22Km/h, Course=155deg.</desc>
+</trkpt>
+<trkpt lat="51.962877" lon="7.604743">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:21:11Z</time>
+ <desc>Lat.=51.962877, Long.=7.604743, Alt.=62.000000m, Speed=20Km/h, Course=143deg.</desc>
+</trkpt>
+<trkpt lat="51.962650" lon="7.605023">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:21:16Z</time>
+ <desc>Lat.=51.962650, Long.=7.605023, Alt.=65.000000m, Speed=22Km/h, Course=143deg.</desc>
+</trkpt>
+<trkpt lat="51.962435" lon="7.605200">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:21:20Z</time>
+ <desc>Lat.=51.962435, Long.=7.605200, Alt.=64.000000m, Speed=24Km/h, Course=153deg.</desc>
+</trkpt>
+<trkpt lat="51.962237" lon="7.605408">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:24Z</time>
+ <desc>Lat.=51.962237, Long.=7.605408, Alt.=63.000000m, Speed=23Km/h, Course=147deg.</desc>
+</trkpt>
+<trkpt lat="51.962035" lon="7.605634">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:28Z</time>
+ <desc>Lat.=51.962035, Long.=7.605634, Alt.=63.000000m, Speed=24Km/h, Course=145deg.</desc>
+</trkpt>
+<trkpt lat="51.961834" lon="7.605857">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:21:32Z</time>
+ <desc>Lat.=51.961834, Long.=7.605857, Alt.=62.000000m, Speed=24Km/h, Course=146deg.</desc>
+</trkpt>
+<trkpt lat="51.961590" lon="7.606103">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:21:37Z</time>
+ <desc>Lat.=51.961590, Long.=7.606103, Alt.=62.000000m, Speed=22Km/h, Course=148deg.</desc>
+</trkpt>
+<trkpt lat="51.961395" lon="7.606349">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:43Z</time>
+ <desc>Lat.=51.961395, Long.=7.606349, Alt.=63.000000m, Speed=16Km/h, Course=142deg.</desc>
+</trkpt>
+<trkpt lat="51.961184" lon="7.606605">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:48Z</time>
+ <desc>Lat.=51.961184, Long.=7.606605, Alt.=63.000000m, Speed=21Km/h, Course=143deg.</desc>
+</trkpt>
+<trkpt lat="51.961216" lon="7.606992">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:53Z</time>
+ <desc>Lat.=51.961216, Long.=7.606992, Alt.=63.000000m, Speed=19Km/h, Course=82deg.</desc>
+</trkpt>
+<trkpt lat="51.961219" lon="7.607429">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:21:58Z</time>
+ <desc>Lat.=51.961219, Long.=7.607429, Alt.=63.000000m, Speed=21Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.961200" lon="7.607831">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:22:02Z</time>
+ <desc>Lat.=51.961200, Long.=7.607831, Alt.=63.000000m, Speed=24Km/h, Course=94deg.</desc>
+</trkpt>
+<trkpt lat="51.961133" lon="7.608254">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:22:06Z</time>
+ <desc>Lat.=51.961133, Long.=7.608254, Alt.=63.000000m, Speed=26Km/h, Course=104deg.</desc>
+</trkpt>
+<trkpt lat="51.961104" lon="7.608652">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:22:10Z</time>
+ <desc>Lat.=51.961104, Long.=7.608652, Alt.=62.000000m, Speed=24Km/h, Course=97deg.</desc>
+</trkpt>
+<trkpt lat="51.961213" lon="7.608990">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:22:14Z</time>
+ <desc>Lat.=51.961213, Long.=7.608990, Alt.=60.000000m, Speed=23Km/h, Course=62deg.</desc>
+</trkpt>
+<trkpt lat="51.961328" lon="7.609335">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:22:20Z</time>
+ <desc>Lat.=51.961328, Long.=7.609335, Alt.=58.000000m, Speed=16Km/h, Course=62deg.</desc>
+</trkpt>
+<trkpt lat="51.961379" lon="7.609406">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:22:44Z</time>
+ <desc>Lat.=51.961379, Long.=7.609406, Alt.=59.000000m, Speed=1Km/h, Course=41deg.</desc>
+</trkpt>
+<trkpt lat="51.961494" lon="7.609715">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:22:51Z</time>
+ <desc>Lat.=51.961494, Long.=7.609715, Alt.=59.000000m, Speed=12Km/h, Course=59deg.</desc>
+</trkpt>
+<trkpt lat="51.961670" lon="7.610040">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:22:56Z</time>
+ <desc>Lat.=51.961670, Long.=7.610040, Alt.=59.000000m, Speed=21Km/h, Course=49deg.</desc>
+</trkpt>
+<trkpt lat="51.961805" lon="7.610415">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:23:00Z</time>
+ <desc>Lat.=51.961805, Long.=7.610415, Alt.=58.000000m, Speed=26Km/h, Course=60deg.</desc>
+</trkpt>
+<trkpt lat="51.961878" lon="7.610820">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:23:04Z</time>
+ <desc>Lat.=51.961878, Long.=7.610820, Alt.=58.000000m, Speed=26Km/h, Course=74deg.</desc>
+</trkpt>
+<trkpt lat="51.961907" lon="7.611242">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:08Z</time>
+ <desc>Lat.=51.961907, Long.=7.611242, Alt.=59.000000m, Speed=26Km/h, Course=84deg.</desc>
+</trkpt>
+<trkpt lat="51.961898" lon="7.611660">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:23:12Z</time>
+ <desc>Lat.=51.961898, Long.=7.611660, Alt.=60.000000m, Speed=25Km/h, Course=92deg.</desc>
+</trkpt>
+<trkpt lat="51.961856" lon="7.612086">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:23:16Z</time>
+ <desc>Lat.=51.961856, Long.=7.612086, Alt.=60.000000m, Speed=26Km/h, Course=99deg.</desc>
+</trkpt>
+<trkpt lat="51.961834" lon="7.612518">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:23:20Z</time>
+ <desc>Lat.=51.961834, Long.=7.612518, Alt.=60.000000m, Speed=26Km/h, Course=95deg.</desc>
+</trkpt>
+<trkpt lat="51.961830" lon="7.612930">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:23:24Z</time>
+ <desc>Lat.=51.961830, Long.=7.612930, Alt.=61.000000m, Speed=25Km/h, Course=91deg.</desc>
+</trkpt>
+<trkpt lat="51.961846" lon="7.613335">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:23:28Z</time>
+ <desc>Lat.=51.961846, Long.=7.613335, Alt.=61.000000m, Speed=25Km/h, Course=86deg.</desc>
+</trkpt>
+<trkpt lat="51.961904" lon="7.613730">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:23:32Z</time>
+ <desc>Lat.=51.961904, Long.=7.613730, Alt.=61.000000m, Speed=24Km/h, Course=77deg.</desc>
+</trkpt>
+<trkpt lat="51.961949" lon="7.614122">
+ <ele>61.000000</ele>
+ <time>2016-06-20T20:23:36Z</time>
+ <desc>Lat.=51.961949, Long.=7.614122, Alt.=61.000000m, Speed=24Km/h, Course=79deg.</desc>
+</trkpt>
+<trkpt lat="51.961914" lon="7.614542">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:41Z</time>
+ <desc>Lat.=51.961914, Long.=7.614542, Alt.=59.000000m, Speed=20Km/h, Course=98deg.</desc>
+</trkpt>
+<trkpt lat="51.961670" lon="7.614667">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:46Z</time>
+ <desc>Lat.=51.961670, Long.=7.614667, Alt.=59.000000m, Speed=20Km/h, Course=162deg.</desc>
+</trkpt>
+<trkpt lat="51.961418" lon="7.614670">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:50Z</time>
+ <desc>Lat.=51.961418, Long.=7.614670, Alt.=59.000000m, Speed=25Km/h, Course=180deg.</desc>
+</trkpt>
+<trkpt lat="51.961152" lon="7.614654">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:55Z</time>
+ <desc>Lat.=51.961152, Long.=7.614654, Alt.=59.000000m, Speed=21Km/h, Course=182deg.</desc>
+</trkpt>
+<trkpt lat="51.960918" lon="7.614597">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:23:59Z</time>
+ <desc>Lat.=51.960918, Long.=7.614597, Alt.=59.000000m, Speed=23Km/h, Course=189deg.</desc>
+</trkpt>
+<trkpt lat="51.960640" lon="7.614575">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:24:04Z</time>
+ <desc>Lat.=51.960640, Long.=7.614575, Alt.=59.000000m, Speed=22Km/h, Course=183deg.</desc>
+</trkpt>
+<trkpt lat="51.960426" lon="7.614698">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:24:09Z</time>
+ <desc>Lat.=51.960426, Long.=7.614698, Alt.=58.000000m, Speed=18Km/h, Course=161deg.</desc>
+</trkpt>
+<trkpt lat="51.960218" lon="7.614874">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:14Z</time>
+ <desc>Lat.=51.960218, Long.=7.614874, Alt.=57.000000m, Speed=18Km/h, Course=153deg.</desc>
+</trkpt>
+<trkpt lat="51.960006" lon="7.615105">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:19Z</time>
+ <desc>Lat.=51.960006, Long.=7.615105, Alt.=57.000000m, Speed=20Km/h, Course=146deg.</desc>
+</trkpt>
+<trkpt lat="51.959811" lon="7.615290">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:24Z</time>
+ <desc>Lat.=51.959811, Long.=7.615290, Alt.=57.000000m, Speed=18Km/h, Course=150deg.</desc>
+</trkpt>
+<trkpt lat="51.959584" lon="7.615510">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:28Z</time>
+ <desc>Lat.=51.959584, Long.=7.615510, Alt.=57.000000m, Speed=26Km/h, Course=149deg.</desc>
+</trkpt>
+<trkpt lat="51.959402" lon="7.615732">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:32Z</time>
+ <desc>Lat.=51.959402, Long.=7.615732, Alt.=57.000000m, Speed=22Km/h, Course=143deg.</desc>
+</trkpt>
+<trkpt lat="51.959190" lon="7.615942">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:24:36Z</time>
+ <desc>Lat.=51.959190, Long.=7.615942, Alt.=58.000000m, Speed=24Km/h, Course=149deg.</desc>
+</trkpt>
+<trkpt lat="51.958973" lon="7.616098">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:40Z</time>
+ <desc>Lat.=51.958973, Long.=7.616098, Alt.=57.000000m, Speed=23Km/h, Course=156deg.</desc>
+</trkpt>
+<trkpt lat="51.958758" lon="7.616275">
+ <ele>56.000000</ele>
+ <time>2016-06-20T20:24:44Z</time>
+ <desc>Lat.=51.958758, Long.=7.616275, Alt.=56.000000m, Speed=24Km/h, Course=153deg.</desc>
+</trkpt>
+<trkpt lat="51.958493" lon="7.616357">
+ <ele>56.000000</ele>
+ <time>2016-06-20T20:24:48Z</time>
+ <desc>Lat.=51.958493, Long.=7.616357, Alt.=56.000000m, Speed=27Km/h, Course=169deg.</desc>
+</trkpt>
+<trkpt lat="51.958269" lon="7.616465">
+ <ele>56.000000</ele>
+ <time>2016-06-20T20:24:52Z</time>
+ <desc>Lat.=51.958269, Long.=7.616465, Alt.=56.000000m, Speed=23Km/h, Course=163deg.</desc>
+</trkpt>
+<trkpt lat="51.958099" lon="7.616762">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:24:57Z</time>
+ <desc>Lat.=51.958099, Long.=7.616762, Alt.=57.000000m, Speed=19Km/h, Course=133deg.</desc>
+</trkpt>
+<trkpt lat="51.958058" lon="7.617150">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:01Z</time>
+ <desc>Lat.=51.958058, Long.=7.617150, Alt.=58.000000m, Speed=24Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.958003" lon="7.617583">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:25:05Z</time>
+ <desc>Lat.=51.958003, Long.=7.617583, Alt.=57.000000m, Speed=27Km/h, Course=102deg.</desc>
+</trkpt>
+<trkpt lat="51.957981" lon="7.618018">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:25:09Z</time>
+ <desc>Lat.=51.957981, Long.=7.618018, Alt.=57.000000m, Speed=26Km/h, Course=95deg.</desc>
+</trkpt>
+<trkpt lat="51.957965" lon="7.618451">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:25:13Z</time>
+ <desc>Lat.=51.957965, Long.=7.618451, Alt.=57.000000m, Speed=26Km/h, Course=93deg.</desc>
+</trkpt>
+<trkpt lat="51.957946" lon="7.618878">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:25:17Z</time>
+ <desc>Lat.=51.957946, Long.=7.618878, Alt.=59.000000m, Speed=26Km/h, Course=94deg.</desc>
+</trkpt>
+<trkpt lat="51.957882" lon="7.619269">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:25:21Z</time>
+ <desc>Lat.=51.957882, Long.=7.619269, Alt.=59.000000m, Speed=24Km/h, Course=105deg.</desc>
+</trkpt>
+<trkpt lat="51.957747" lon="7.619575">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:25:25Z</time>
+ <desc>Lat.=51.957747, Long.=7.619575, Alt.=59.000000m, Speed=23Km/h, Course=125deg.</desc>
+</trkpt>
+<trkpt lat="51.957629" lon="7.619905">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:25:29Z</time>
+ <desc>Lat.=51.957629, Long.=7.619905, Alt.=59.000000m, Speed=23Km/h, Course=120deg.</desc>
+</trkpt>
+<trkpt lat="51.957616" lon="7.620345">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:34Z</time>
+ <desc>Lat.=51.957616, Long.=7.620345, Alt.=58.000000m, Speed=21Km/h, Course=93deg.</desc>
+</trkpt>
+<trkpt lat="51.957526" lon="7.620760">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:25:39Z</time>
+ <desc>Lat.=51.957526, Long.=7.620760, Alt.=59.000000m, Speed=21Km/h, Course=109deg.</desc>
+</trkpt>
+<trkpt lat="51.957456" lon="7.621177">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:44Z</time>
+ <desc>Lat.=51.957456, Long.=7.621177, Alt.=58.000000m, Speed=21Km/h, Course=105deg.</desc>
+</trkpt>
+<trkpt lat="51.957386" lon="7.621518">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:48Z</time>
+ <desc>Lat.=51.957386, Long.=7.621518, Alt.=58.000000m, Speed=22Km/h, Course=108deg.</desc>
+</trkpt>
+<trkpt lat="51.957328" lon="7.621895">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:53Z</time>
+ <desc>Lat.=51.957328, Long.=7.621895, Alt.=58.000000m, Speed=19Km/h, Course=104deg.</desc>
+</trkpt>
+<trkpt lat="51.957251" lon="7.622298">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:25:58Z</time>
+ <desc>Lat.=51.957251, Long.=7.622298, Alt.=58.000000m, Speed=20Km/h, Course=107deg.</desc>
+</trkpt>
+<trkpt lat="51.957248" lon="7.622682">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:26:03Z</time>
+ <desc>Lat.=51.957248, Long.=7.622682, Alt.=58.000000m, Speed=18Km/h, Course=91deg.</desc>
+</trkpt>
+<trkpt lat="51.957210" lon="7.623043">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:26:08Z</time>
+ <desc>Lat.=51.957210, Long.=7.623043, Alt.=59.000000m, Speed=18Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.957133" lon="7.623380">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:26:12Z</time>
+ <desc>Lat.=51.957133, Long.=7.623380, Alt.=58.000000m, Speed=22Km/h, Course=110deg.</desc>
+</trkpt>
+<trkpt lat="51.957062" lon="7.623767">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:26:17Z</time>
+ <desc>Lat.=51.957062, Long.=7.623767, Alt.=58.000000m, Speed=19Km/h, Course=106deg.</desc>
+</trkpt>
+<trkpt lat="51.956998" lon="7.624112">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:26:21Z</time>
+ <desc>Lat.=51.956998, Long.=7.624112, Alt.=59.000000m, Speed=22Km/h, Course=107deg.</desc>
+</trkpt>
+<trkpt lat="51.956890" lon="7.624478">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:26:25Z</time>
+ <desc>Lat.=51.956890, Long.=7.624478, Alt.=60.000000m, Speed=25Km/h, Course=116deg.</desc>
+</trkpt>
+<trkpt lat="51.956672" lon="7.624595">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:26:30Z</time>
+ <desc>Lat.=51.956672, Long.=7.624595, Alt.=58.000000m, Speed=18Km/h, Course=162deg.</desc>
+</trkpt>
+<trkpt lat="51.956496" lon="7.624872">
+ <ele>58.000000</ele>
+ <time>2016-06-20T20:26:36Z</time>
+ <desc>Lat.=51.956496, Long.=7.624872, Alt.=58.000000m, Speed=16Km/h, Course=136deg.</desc>
+</trkpt>
+<trkpt lat="51.956451" lon="7.625290">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:26:41Z</time>
+ <desc>Lat.=51.956451, Long.=7.625290, Alt.=57.000000m, Speed=20Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.956355" lon="7.625612">
+ <ele>57.000000</ele>
+ <time>2016-06-20T20:26:45Z</time>
+ <desc>Lat.=51.956355, Long.=7.625612, Alt.=57.000000m, Speed=22Km/h, Course=116deg.</desc>
+</trkpt>
+<trkpt lat="51.956198" lon="7.625915">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:26:50Z</time>
+ <desc>Lat.=51.956198, Long.=7.625915, Alt.=60.000000m, Speed=19Km/h, Course=130deg.</desc>
+</trkpt>
+<trkpt lat="51.955971" lon="7.625902">
+ <ele>60.000000</ele>
+ <time>2016-06-20T20:27:01Z</time>
+ <desc>Lat.=51.955971, Long.=7.625902, Alt.=60.000000m, Speed=8Km/h, Course=182deg.</desc>
+</trkpt>
+<trkpt lat="51.955712" lon="7.625875">
+ <ele>59.000000</ele>
+ <time>2016-06-20T20:27:07Z</time>
+ <desc>Lat.=51.955712, Long.=7.625875, Alt.=59.000000m, Speed=17Km/h, Course=184deg.</desc>
+</trkpt>
+<trkpt lat="51.955514" lon="7.626165">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:27:13Z</time>
+ <desc>Lat.=51.955514, Long.=7.626165, Alt.=62.000000m, Speed=17Km/h, Course=138deg.</desc>
+</trkpt>
+<trkpt lat="51.955459" lon="7.626582">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:27:18Z</time>
+ <desc>Lat.=51.955459, Long.=7.626582, Alt.=63.000000m, Speed=21Km/h, Course=102deg.</desc>
+</trkpt>
+<trkpt lat="51.955462" lon="7.626945">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:27:22Z</time>
+ <desc>Lat.=51.955462, Long.=7.626945, Alt.=63.000000m, Speed=22Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.955334" lon="7.627242">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:27:26Z</time>
+ <desc>Lat.=51.955334, Long.=7.627242, Alt.=64.000000m, Speed=22Km/h, Course=125deg.</desc>
+</trkpt>
+<trkpt lat="51.955213" lon="7.627615">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:27:31Z</time>
+ <desc>Lat.=51.955213, Long.=7.627615, Alt.=64.000000m, Speed=20Km/h, Course=118deg.</desc>
+</trkpt>
+<trkpt lat="51.955120" lon="7.628000">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:27:36Z</time>
+ <desc>Lat.=51.955120, Long.=7.628000, Alt.=66.000000m, Speed=20Km/h, Course=111deg.</desc>
+</trkpt>
+<trkpt lat="51.955021" lon="7.628403">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:27:41Z</time>
+ <desc>Lat.=51.955021, Long.=7.628403, Alt.=68.000000m, Speed=21Km/h, Course=112deg.</desc>
+</trkpt>
+<trkpt lat="51.954928" lon="7.628750">
+ <ele>69.000000</ele>
+ <time>2016-06-20T20:27:45Z</time>
+ <desc>Lat.=51.954928, Long.=7.628750, Alt.=69.000000m, Speed=23Km/h, Course=113deg.</desc>
+</trkpt>
+<trkpt lat="51.954835" lon="7.629123">
+ <ele>71.000000</ele>
+ <time>2016-06-20T20:27:50Z</time>
+ <desc>Lat.=51.954835, Long.=7.629123, Alt.=71.000000m, Speed=19Km/h, Course=112deg.</desc>
+</trkpt>
+<trkpt lat="51.954698" lon="7.629428">
+ <ele>73.000000</ele>
+ <time>2016-06-20T20:27:56Z</time>
+ <desc>Lat.=51.954698, Long.=7.629428, Alt.=73.000000m, Speed=15Km/h, Course=126deg.</desc>
+</trkpt>
+<trkpt lat="51.954605" lon="7.629757">
+ <ele>76.000000</ele>
+ <time>2016-06-20T20:28:05Z</time>
+ <desc>Lat.=51.954605, Long.=7.629757, Alt.=76.000000m, Speed=9Km/h, Course=115deg.</desc>
+</trkpt>
+<trkpt lat="51.954422" lon="7.630047">
+ <ele>77.000000</ele>
+ <time>2016-06-20T20:28:11Z</time>
+ <desc>Lat.=51.954422, Long.=7.630047, Alt.=77.000000m, Speed=17Km/h, Course=136deg.</desc>
+</trkpt>
+<trkpt lat="51.954381" lon="7.630432">
+ <ele>78.000000</ele>
+ <time>2016-06-20T20:28:18Z</time>
+ <desc>Lat.=51.954381, Long.=7.630432, Alt.=78.000000m, Speed=13Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.954330" lon="7.630787">
+ <ele>86.000000</ele>
+ <time>2016-06-20T20:28:25Z</time>
+ <desc>Lat.=51.954330, Long.=7.630787, Alt.=86.000000m, Speed=12Km/h, Course=103deg.</desc>
+</trkpt>
+<trkpt lat="51.954259" lon="7.631068">
+ <ele>91.000000</ele>
+ <time>2016-06-20T20:28:40Z</time>
+ <desc>Lat.=51.954259, Long.=7.631068, Alt.=91.000000m, Speed=4Km/h, Course=112deg.</desc>
+</trkpt>
+<trkpt lat="51.954102" lon="7.631391">
+ <ele>86.000000</ele>
+ <time>2016-06-20T20:28:47Z</time>
+ <desc>Lat.=51.954102, Long.=7.631391, Alt.=86.000000m, Speed=14Km/h, Course=128deg.</desc>
+</trkpt>
+<trkpt lat="51.953987" lon="7.631778">
+ <ele>88.000000</ele>
+ <time>2016-06-20T20:28:52Z</time>
+ <desc>Lat.=51.953987, Long.=7.631778, Alt.=88.000000m, Speed=21Km/h, Course=116deg.</desc>
+</trkpt>
+<trkpt lat="51.953824" lon="7.632115">
+ <ele>83.000000</ele>
+ <time>2016-06-20T20:28:56Z</time>
+ <desc>Lat.=51.953824, Long.=7.632115, Alt.=83.000000m, Speed=26Km/h, Course=128deg.</desc>
+</trkpt>
+<trkpt lat="51.953712" lon="7.632483">
+ <ele>76.000000</ele>
+ <time>2016-06-20T20:29:00Z</time>
+ <desc>Lat.=51.953712, Long.=7.632483, Alt.=76.000000m, Speed=25Km/h, Course=116deg.</desc>
+</trkpt>
+<trkpt lat="51.953606" lon="7.632830">
+ <ele>69.000000</ele>
+ <time>2016-06-20T20:29:04Z</time>
+ <desc>Lat.=51.953606, Long.=7.632830, Alt.=69.000000m, Speed=23Km/h, Course=116deg.</desc>
+</trkpt>
+<trkpt lat="51.953443" lon="7.633135">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:29:08Z</time>
+ <desc>Lat.=51.953443, Long.=7.633135, Alt.=68.000000m, Speed=24Km/h, Course=131deg.</desc>
+</trkpt>
+<trkpt lat="51.953286" lon="7.633435">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:29:12Z</time>
+ <desc>Lat.=51.953286, Long.=7.633435, Alt.=68.000000m, Speed=24Km/h, Course=130deg.</desc>
+</trkpt>
+<trkpt lat="51.953120" lon="7.633672">
+ <ele>69.000000</ele>
+ <time>2016-06-20T20:29:16Z</time>
+ <desc>Lat.=51.953120, Long.=7.633672, Alt.=69.000000m, Speed=22Km/h, Course=139deg.</desc>
+</trkpt>
+<trkpt lat="51.953037" lon="7.634077">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:29:20Z</time>
+ <desc>Lat.=51.953037, Long.=7.634077, Alt.=68.000000m, Speed=26Km/h, Course=108deg.</desc>
+</trkpt>
+<trkpt lat="51.952998" lon="7.634445">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:29:24Z</time>
+ <desc>Lat.=51.952998, Long.=7.634445, Alt.=66.000000m, Speed=23Km/h, Course=100deg.</desc>
+</trkpt>
+<trkpt lat="51.952970" lon="7.634806">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:29:28Z</time>
+ <desc>Lat.=51.952970, Long.=7.634806, Alt.=65.000000m, Speed=22Km/h, Course=97deg.</desc>
+</trkpt>
+<trkpt lat="51.952941" lon="7.635182">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:29:32Z</time>
+ <desc>Lat.=51.952941, Long.=7.635182, Alt.=66.000000m, Speed=23Km/h, Course=97deg.</desc>
+</trkpt>
+<trkpt lat="51.952973" lon="7.635583">
+ <ele>66.000000</ele>
+ <time>2016-06-20T20:29:36Z</time>
+ <desc>Lat.=51.952973, Long.=7.635583, Alt.=66.000000m, Speed=24Km/h, Course=83deg.</desc>
+</trkpt>
+<trkpt lat="51.952922" lon="7.635945">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:29:40Z</time>
+ <desc>Lat.=51.952922, Long.=7.635945, Alt.=65.000000m, Speed=22Km/h, Course=103deg.</desc>
+</trkpt>
+<trkpt lat="51.952816" lon="7.636271">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:29:45Z</time>
+ <desc>Lat.=51.952816, Long.=7.636271, Alt.=65.000000m, Speed=18Km/h, Course=118deg.</desc>
+</trkpt>
+<trkpt lat="51.952848" lon="7.636423">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:30:17Z</time>
+ <desc>Lat.=51.952848, Long.=7.636423, Alt.=63.000000m, Speed=1Km/h, Course=71deg.</desc>
+</trkpt>
+<trkpt lat="51.952851" lon="7.636818">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:30:24Z</time>
+ <desc>Lat.=51.952851, Long.=7.636818, Alt.=63.000000m, Speed=13Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.952883" lon="7.637234">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:30:29Z</time>
+ <desc>Lat.=51.952883, Long.=7.637234, Alt.=63.000000m, Speed=20Km/h, Course=83deg.</desc>
+</trkpt>
+<trkpt lat="51.952915" lon="7.637592">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:30:33Z</time>
+ <desc>Lat.=51.952915, Long.=7.637592, Alt.=62.000000m, Speed=22Km/h, Course=82deg.</desc>
+</trkpt>
+<trkpt lat="51.952979" lon="7.637963">
+ <ele>62.000000</ele>
+ <time>2016-06-20T20:30:37Z</time>
+ <desc>Lat.=51.952979, Long.=7.637963, Alt.=62.000000m, Speed=23Km/h, Course=74deg.</desc>
+</trkpt>
+<trkpt lat="51.953018" lon="7.638363">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:30:41Z</time>
+ <desc>Lat.=51.953018, Long.=7.638363, Alt.=63.000000m, Speed=24Km/h, Course=81deg.</desc>
+</trkpt>
+<trkpt lat="51.953078" lon="7.638717">
+ <ele>63.000000</ele>
+ <time>2016-06-20T20:30:45Z</time>
+ <desc>Lat.=51.953078, Long.=7.638717, Alt.=63.000000m, Speed=22Km/h, Course=74deg.</desc>
+</trkpt>
+<trkpt lat="51.953120" lon="7.639080">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:30:49Z</time>
+ <desc>Lat.=51.953120, Long.=7.639080, Alt.=64.000000m, Speed=22Km/h, Course=79deg.</desc>
+</trkpt>
+<trkpt lat="51.953136" lon="7.639446">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:30:53Z</time>
+ <desc>Lat.=51.953136, Long.=7.639446, Alt.=64.000000m, Speed=22Km/h, Course=86deg.</desc>
+</trkpt>
+<trkpt lat="51.953219" lon="7.639788">
+ <ele>65.000000</ele>
+ <time>2016-06-20T20:30:57Z</time>
+ <desc>Lat.=51.953219, Long.=7.639788, Alt.=65.000000m, Speed=22Km/h, Course=68deg.</desc>
+</trkpt>
+<trkpt lat="51.953267" lon="7.640194">
+ <ele>67.000000</ele>
+ <time>2016-06-20T20:31:01Z</time>
+ <desc>Lat.=51.953267, Long.=7.640194, Alt.=67.000000m, Speed=25Km/h, Course=79deg.</desc>
+</trkpt>
+<trkpt lat="51.953261" lon="7.640632">
+ <ele>67.000000</ele>
+ <time>2016-06-20T20:31:06Z</time>
+ <desc>Lat.=51.953261, Long.=7.640632, Alt.=67.000000m, Speed=21Km/h, Course=91deg.</desc>
+</trkpt>
+<trkpt lat="51.953267" lon="7.641072">
+ <ele>67.000000</ele>
+ <time>2016-06-20T20:31:11Z</time>
+ <desc>Lat.=51.953267, Long.=7.641072, Alt.=67.000000m, Speed=21Km/h, Course=89deg.</desc>
+</trkpt>
+<trkpt lat="51.953325" lon="7.641438">
+ <ele>68.000000</ele>
+ <time>2016-06-20T20:31:16Z</time>
+ <desc>Lat.=51.953325, Long.=7.641438, Alt.=68.000000m, Speed=18Km/h, Course=76deg.</desc>
+</trkpt>
+<trkpt lat="51.953088" lon="7.641594">
+ <ele>64.000000</ele>
+ <time>2016-06-20T20:31:24Z</time>
+ <desc>Lat.=51.953088, Long.=7.641594, Alt.=64.000000m, Speed=12Km/h, Course=158deg.</desc>
+</trkpt>
+</trkseg>
+</trk>
+</gpx>

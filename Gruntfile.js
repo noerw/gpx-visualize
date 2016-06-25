@@ -1,3 +1,7 @@
+/* TODO:
+  - get maxSpeed of track
+*/
+
 var gpx2geojson = require('idris-gpx'),
   async = require('async'),
   turf = require('turf'),
@@ -87,6 +91,13 @@ module.exports = function(grunt) {
 
 //////////////////////////////////////////////////////////////////////
 
+/**
+ * converts geojson points to a linestring & processes meta information
+ * @param geojson: geojson featurecollection containing points
+ * @param tags:    optional array of tag strings
+ * @param done:    node style callback function
+ * @returns object in the form of { meta: {...}, events: {...}, track: {...} }
+ */
 function processGeoJSON(geojson, tags, done) {
   // create a clone of the data & convert strings to numbers where possible
   var data = JSON.parse(JSON.stringify(geojson), function(key, val) {
@@ -98,6 +109,8 @@ function processGeoJSON(geojson, tags, done) {
       tags: tags || [],
       length: 0,   // kilometers
       duration: 0, // hours
+      maxSpeed: 0, // km/h
+      avgSpeed: 0, // km/h
       date: data.features[0].properties.time,
       events: {}
     },
@@ -122,12 +135,15 @@ function processGeoJSON(geojson, tags, done) {
       // update global metadata
       result.meta.duration += duration;
       result.meta.length += linestring.properties.length;
+      if (result.meta.maxSpeed < linestring.properties.speed)
+        result.meta.maxSpeed = linestring.properties.speed;
     }
 
     prevPoint = point;
   });
 
-
+  prevPoint = null;
+  result.meta.avgSpeed = result.meta.length / result.meta.duration;
   result.meta.length = roundFloat(result.meta.length);
   result.meta.duration = roundFloat(result.meta.duration);
 
@@ -138,11 +154,11 @@ function processGeoJSON(geojson, tags, done) {
         var speedThresh = 10;  // km/h
         return (line.properties.speed <= speedThresh);
       },
-      coordIndex: 1
+      coordIndex: 1 // apply the event to the i coordinate of the linestring
     },
     'turn': {
       fn: function isTurn(line, prevLine) {
-        var bearingThresh = 66; // degrees
+        var bearingThresh = 64; // degrees
         var distanceThresh = 0.005; // km
         var angle = line.properties.bearing - prevLine.properties.bearing;
         if (angle > 180)       angle -= 360;
@@ -167,7 +183,7 @@ function processGeoJSON(geojson, tags, done) {
       for (var type in events) {
         if (events[type].fn(line, prevLine)) {
           if (events[type].coordIndex === 1) point.properties.events.push(type);
-          else prevPoint.properties.events.push(type);
+          else if (prevPoint) prevPoint.properties.events.push(type);
           result.meta.events[type + 's']++;
         }
       }

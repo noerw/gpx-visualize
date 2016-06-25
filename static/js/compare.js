@@ -37,6 +37,8 @@ function addMetadata(tableID, meta) {
   $('#' + tableID + ' tr[date]').append('<td>' + new Date(meta.date).toLocaleString() + '</td>');
   $('#' + tableID + ' tr[length]').append('<td>' + roundFloat(meta.length) + ' km</td>');
   $('#' + tableID + ' tr[duration]').append('<td>' + roundFloat(meta.duration *60, 2) + ' min</td>');
+  $('#' + tableID + ' tr[maxSpeed]').append('<td>' + roundFloat(meta.maxSpeed, 2) + ' km/h</td>');
+  $('#' + tableID + ' tr[avgSpeed]').append('<td>' + roundFloat(meta.avgSpeed, 2) + ' km/h</td>');
   $('#' + tableID + ' tr[stops]').append('<td>' + meta.events.stops + '</td>');
   $('#' + tableID + ' tr[turns]').append('<td>' + meta.events.turns + '</td>');
 
@@ -63,13 +65,13 @@ function initMap(domID) {
 function addGeoJson(map, data) {
   var track = L.geoJson(data.track, {
     onEachFeature: function(feature, layer) {
-      _createPopup(feature.properties, layer);
+      createPopup(feature.properties, layer);
       layer.setStyle(speed2Style(feature.properties.speed));
     }
   });
   var pois = L.geoJson(data.events, {
     onEachFeature: function(feature, layer) {
-      _createPopup(feature.properties, layer);
+      createPopup(feature.properties, layer);
     },
     pointToLayer: function(feature, latlng) {
       return L.marker(latlng, {
@@ -87,7 +89,7 @@ function addGeoJson(map, data) {
   return featureGroup;
 
   /* parse the properties of a geojson layer & add them to a popup */
-  function _createPopup(properties, layer) {
+  function createPopup(properties, layer) {
     var _htmlString = '';
     for (var prop in properties) {
       _htmlString += '<tr><th>' + prop + ':</th><td>' + properties[prop].toString() + '</td></tr>';
@@ -96,7 +98,7 @@ function addGeoJson(map, data) {
   }
 
   function speed2Style(val) {
-    var maxSpeed = 29;
+    var maxSpeed = 38.5;
     var percent = val / maxSpeed;
     var red = parseInt(255 - percent * 255).toString(16);
     var green = parseInt(percent  * 255).toString(16);
@@ -105,7 +107,7 @@ function addGeoJson(map, data) {
     return {
       color: '#' + red + green + '00',
       opacity: 0.3 + percent * 2 / 3,
-      weight: 8 + parseInt((1 - percent) * 50)
+      weight: 5 + parseInt(Math.exp(2.6 - 2.6*percent) * 4)
     }
   }
 
