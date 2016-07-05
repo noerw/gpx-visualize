@@ -21,6 +21,29 @@ $(document).ready(function() {
       }
     });
   });
+
+  ajax('trafficlights.json', function(res, statusCode) {
+    var data = JSON.parse(res);
+    var trafficlightsLayer = L.geoJson(data, {
+      pointToLayer: function(feature, latlng) {
+        return L.marker(latlng, {
+          icon: L.AwesomeMarkers.icon({ prefix: 'ion', icon: 'ios-stopwatch-outline', markerColor: 'cadetblue' }),
+          zIndexOffset: -10
+        });
+      }
+    }).addTo(map0.map);
+    map0.layerCtrl.addOverlay(trafficlightsLayer, 'traffic lights');
+
+    var trafficlightsLayer2 = L.geoJson(data, {
+      pointToLayer: function(feature, latlng) {
+        return L.marker(latlng, {
+          icon: L.AwesomeMarkers.icon({ prefix: 'ion', icon: 'ios-stopwatch-outline', markerColor: 'cadetblue' }),
+          zIndexOffset: -10
+        });
+      }
+    }).addTo(map1.map);
+    map1.layerCtrl.addOverlay(trafficlightsLayer2, 'traffic lights');
+  });
 });
 
 function ajax(url, success, method, mimetype) {
@@ -37,10 +60,10 @@ function addMetadata(tableID, meta) {
   $('#' + tableID + ' tr[date]').append('<td>' + new Date(meta.date).toLocaleString() + '</td>');
   $('#' + tableID + ' tr[length]').append('<td>' + roundFloat(meta.length) + ' km</td>');
   $('#' + tableID + ' tr[duration]').append('<td>' + roundFloat(meta.duration *60, 2) + ' min</td>');
+  $('#' + tableID + ' tr[standingtime]').append('<td>' + roundFloat(meta.standingtime *60, 2) + ' min</td>');
   $('#' + tableID + ' tr[maxSpeed]').append('<td>' + roundFloat(meta.maxSpeed, 2) + ' km/h</td>');
   $('#' + tableID + ' tr[avgSpeed]').append('<td>' + roundFloat(meta.avgSpeed, 2) + ' km/h</td>');
   $('#' + tableID + ' tr[stops]').append('<td>' + meta.events.stops + '</td>');
-  $('#' + tableID + ' tr[turns]').append('<td>' + meta.events.turns + '</td>');
 
   function roundFloat(val, decimals) {
     var digits = decimals === undefined ? 1e3 : Number('1e' + decimals);
@@ -63,6 +86,11 @@ function initMap(domID) {
 }
 
 function addGeoJson(map, data) {
+  var colors = rainbowDash({
+    uniformStops: true,
+    inputRange: [0, 1]
+  }, ['#e50000', '#ee6c00', '#ffea00', '#93fb00', '#0ee828']);
+
   var track = L.geoJson(data.track, {
     onEachFeature: function(feature, layer) {
       createPopup(feature.properties, layer);
@@ -75,7 +103,7 @@ function addGeoJson(map, data) {
     },
     pointToLayer: function(feature, latlng) {
       return L.marker(latlng, {
-        icon: L.AwesomeMarkers.icon(event2Style(feature.properties.events))
+        icon: L.AwesomeMarkers.icon({ prefix: 'ion', icon: 'arrow-down-c', markerColor: 'red' })
       });
     }
   });
@@ -100,24 +128,11 @@ function addGeoJson(map, data) {
   function speed2Style(val) {
     var maxSpeed = 38.5;
     var percent = val / maxSpeed;
-    var red = parseInt(255 - percent * 255).toString(16);
-    var green = parseInt(percent  * 255).toString(16);
-    if (red.length === 1) red = '0' + red;
-    if (green.length === 1) green = '0' + green;
+
     return {
-      color: '#' + red + green + '00',
+      color: colors(percent),
       opacity: 0.3 + percent * 2 / 3,
       weight: 5 + parseInt(Math.exp(2.6 - 2.6*percent) * 4)
     }
-  }
-
-  function event2Style(events) {
-    if (events.indexOf('stop') != -1 && events.indexOf('turn') != -1)
-      return { prefix: 'ion', icon: 'code-download', markerColor: 'red' };
-    else if (events.indexOf('stop') != -1)
-      return { prefix: 'ion', icon: 'arrow-down-c', markerColor: 'red' };
-    else if (events.indexOf('turn') != -1)
-      return { prefix: 'ion', icon: 'code-working', markerColor: 'gray' };
-    return {};
   }
 }

@@ -1,27 +1,27 @@
-/* TODO
-    - setup dual view comparision
-        - 2 synced maps
-        - comparision selection with overlay sidebar?
-        - trackinfo below each map?
-    - route metadata info ctrl
-        - max speed
-        - duration
-    - fix stop/turn detection
-    - track statistics?
-    - height visualisation?
-*/
-
 $(document).ready(function() {
     var map = initMap('map');
 
     urlQuery = parseQuery();
 
     ajax(urlQuery.track || 'tracks.json', function(response, statusCode) {
-        if (statusCode !== 200)
+        if (statusCode !==  200)
             return $('#error').text('could not get track data: ' + statusCode);
 
         var data = JSON.parse(response);
         addGeoJson(map, data[0]);
+    });
+
+    ajax('trafficlights.json', function(res, statusCode) {
+        var data = JSON.parse(res);
+        var trafficlightsLayer = L.geoJson(data, {
+            pointToLayer: function(feature, latlng) {
+                return L.marker(latlng, {
+                    icon: L.AwesomeMarkers.icon({ prefix: 'ion', icon: 'ios-stopwatch-outline', markerColor: 'cadetblue' }),
+                    zIndexOffset: -10
+                });
+            }
+        }).addTo(map.map);
+        map.layerCtrl.addOverlay(trafficlightsLayer, 'traffic lights');
     });
 });
 
@@ -62,6 +62,11 @@ function initMap(domID) {
 }
 
 function addGeoJson(map, data) {
+    var colors = rainbowDash({
+        uniformStops: true,
+        inputRange: [0, 1]
+    }, ['#e50000', '#ee6c00', '#fde703', '#9cf91a', '#0ee828']);
+
     var track = L.geoJson(data.track, {
         onEachFeature: function(feature, layer) {
             _createPopup(feature.properties, layer);
@@ -74,7 +79,7 @@ function addGeoJson(map, data) {
         },
         pointToLayer: function(feature, latlng) {
             return L.marker(latlng, {
-                icon: L.AwesomeMarkers.icon(event2Style(feature.properties.events))
+                icon: L.AwesomeMarkers.icon({ prefix: 'ion', icon: 'arrow-down-c', markerColor: 'red' })
             });
         }
     });
@@ -96,26 +101,12 @@ function addGeoJson(map, data) {
     }
 
     function speed2Style(val) {
-        var maxSpeed = 29;
+        var maxSpeed = 38.5;
         var percent = val / maxSpeed;
-        var red = parseInt(255 - percent * 255).toString(16);
-        var green = parseInt(percent  * 255).toString(16);
-        if (red.length === 1) red = '0' + red;
-        if (green.length === 1) green = '0' + green;
         return {
-            color: '#' + red + green + '00',
+            color: colors(percent),
             opacity: 0.3 + percent * 2 / 3,
-            weight: 8 + parseInt((1 - percent) * 50)
+            weight: 5 + parseInt(Math.exp(2.6 - 2.6*percent) * 4)
         }
-    }
-
-    function event2Style(events) {
-        if (events.indexOf('stop') != -1 && events.indexOf('turn') != -1)
-            return { prefix: 'ion', icon: 'code-download', markerColor: 'red' };
-        else if (events.indexOf('stop') != -1)
-            return { prefix: 'ion', icon: 'arrow-down-c', markerColor: 'red' };
-        else if (events.indexOf('turn') != -1)
-            return { prefix: 'ion', icon: 'code-working', markerColor: 'gray' };
-        return {};
     }
 }

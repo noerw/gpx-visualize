@@ -74,6 +74,9 @@ module.exports = function(grunt) {
       if (basename[basename.length-1] !== 'gpx') return callback('unknown file format');
 
       gpx2geojson.points(path, function(json) {
+        getSpeedProfile(json, function(err, result) {
+          grunt.file.write('speedprofiles/' + basename[0] + '.json', JSON.stringify(result));
+        });
         processGeoJSON(json, basename[0].split('_'), callback);
       });
     },
@@ -90,6 +93,32 @@ module.exports = function(grunt) {
 };
 
 //////////////////////////////////////////////////////////////////////
+
+function getSpeedProfile(geojson, callback) {
+   var data = JSON.parse(JSON.stringify(geojson), function(key, val) {
+    return !isNaN(parseFloat(val)) && isFinite(val) ? parseFloat(val) : val;
+  });
+  var prevPoint = null, distance = 0; result = [];
+
+  turfMeta.featureEach(data, function(point) {
+    // create a line from the waypoints
+    if (prevPoint !== null) {
+      var duration = new Date(point.properties.time) - new Date(prevPoint.properties.time);
+      duration /= 1000 * 60 * 60; // convert millisec to hours
+      var sectionDist = turf.distance(prevPoint, point, 'kilometers');
+      distance += sectionDist;
+      result.push({
+        timestamp: point.properties.time,
+        speed:     sectionDist / duration,
+        distance:  distance
+      });
+    }
+    prevPoint = point;
+  });
+
+  return callback(null, result);
+};
+
 
 /**
  * converts geojson points to a linestring & processes meta information
@@ -109,6 +138,7 @@ function processGeoJSON(geojson, tags, done) {
       tags: tags || [],
       length: 0,   // kilometers
       duration: 0, // hours
+      standingtime: 0, // hours
       maxSpeed: 0, // km/h
       avgSpeed: 0, // km/h
       date: data.features[0].properties.time,
@@ -126,17 +156,21 @@ function processGeoJSON(geojson, tags, done) {
       ]);
       var duration = new Date(point.properties.time) - new Date(prevPoint.properties.time);
       duration /= 1000 * 60 * 60; // convert millisec to hours
-      linestring.properties.length = roundFloat(turf.distance(prevPoint, point, 'kilometers'), 4);
-      linestring.properties.speed = roundFloat(linestring.properties.length / duration);
-      linestring.properties.bearing = roundFloat(turf.bearing(prevPoint, point), 1);
+      linestring.properties.length    = roundFloat(turf.distance(prevPoint, point, 'kilometers'), 4);
+      linestring.properties.speed     = roundFloat(linestring.properties.length / duration);
+      linestring.properties.bearing   = roundFloat(turf.bearing(prevPoint, point), 1);
       linestring.properties.elevation = roundFloat(point.properties.ele - prevPoint.properties.ele);
       lines.push(linestring);
 
       // update global metadata
-      result.meta.duration += duration;
       result.meta.length += linestring.properties.length;
+      result.meta.duration += duration;
+      if (linestring.properties.speed <= 10)
+        result.meta.standingtime += duration;
       if (result.meta.maxSpeed < linestring.properties.speed)
         result.meta.maxSpeed = linestring.properties.speed;
+
+      linestring.properties.trackPosition = roundFloat(result.meta.length, 3);
     }
 
     prevPoint = point;
@@ -144,6 +178,7 @@ function processGeoJSON(geojson, tags, done) {
 
   prevPoint = null;
   result.meta.avgSpeed = result.meta.length / result.meta.duration;
+  result.meta.standingtime = result.meta.standingtime;
   result.meta.length = roundFloat(result.meta.length);
   result.meta.duration = roundFloat(result.meta.duration);
 
@@ -151,12 +186,11 @@ function processGeoJSON(geojson, tags, done) {
   var events = {
     'stop': {
       fn: function isStop(line, prevLine) {
-        var speedThresh = 10;  // km/h
-        return (line.properties.speed <= speedThresh);
+        return (line.properties.speed <= 10); // slower than 10km/h?
       },
       coordIndex: 1 // apply the event to the i coordinate of the linestring
     },
-    'turn': {
+    /*'turn': {
       fn: function isTurn(line, prevLine) {
         var bearingThresh = 64; // degrees
         var distanceThresh = 0.005; // km
@@ -169,7 +203,7 @@ function processGeoJSON(geojson, tags, done) {
         return false;
       },
       coordIndex: 0
-    }
+    }*/
   };
 
   // init eventcounters
@@ -194,7 +228,7 @@ function processGeoJSON(geojson, tags, done) {
   });
 
   result.events = eventPoints.filter(function(val, i, arr) {
-    return (val.properties.events.length > 0) ? true : false;
+    return (val.properties.events.length > 0);
   })
 
   done(null, result);
